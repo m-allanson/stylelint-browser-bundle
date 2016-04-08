@@ -1,0 +1,49 @@
+{
+  "name": "stylelint-browser-bundle",
+  "version": "0.0.1",
+  "description": "Bundle stylelint into a browser-friendly module",
+  "main": "dist/stylelint-browser-bundle.js",
+  "scripts": {
+    "build": "webpack --progress --config webpack.config.babel.js",
+    "lint": "eslint . --ignore-path .gitignore",
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "m-allanson",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.1.18",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.4",
+    "stylelint": "^5.2.1",
+    "webpack": "^1.12.14"
+  },
+  "devDependencies": {
+    "eslint": "^2.4.0",
+    "eslint-config-stylelint": "^1.0.0"
+  },
+  "engines": {
+    "node": "5.9.1",
+    "npm": "3.7.3"
+  },
+  "eslintConfig": {
+    "extends": "stylelint",
+    "env": {
+      "browser": true
+    },
+    "rules": {
+      "arrow-spacing": 2,
+      "no-var": 2,
+      "object-shorthand": 2,
+      "prefer-const": 2,
+      "template-curly-spacing": 2
+    }
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-es2015"
+    ]
+  }
+}
