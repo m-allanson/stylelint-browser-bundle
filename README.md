@@ -1,10 +1,15 @@
 # Stylelint browser bundle
 
-Bundle stylelint and its dependencies into a single file.
+Bundle stylelint and its dependencies into a single file, suitable for running in a browser environment.
+
+The bundle exposes stylelint's Node API as a global function `StylelintBrowserBundle()`.
 
 # Getting started
 
-Add `dist/stylelint-browser-bundle.js` to a page's `script` tag.
+- Include the bundle in an html page `<script  src="dist/stylelint-browser-bundle.js"></script>`
+
+- Call `StylelintBrowserBundle()`
+
 
 # How it works
 
