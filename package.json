@@ -1,11 +1,11 @@
 {
   "name": "stylelint-browser-bundle",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bundle stylelint into a browser-friendly module",
   "main": "dist/stylelint-browser-bundle.js",
   "scripts": {
     "build": "webpack --progress --config webpack.config.babel.js",
-    "lint": "eslint . --ignore-path .gitignore",
+    "lint": "eslint .",
     "start": "http-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
