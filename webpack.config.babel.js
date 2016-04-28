@@ -24,6 +24,8 @@ export default {
       "resolve-from": "empty-module",
     },
   },
+
+  // path.resolve(__dirname, "src", "build-config-shim.js")
   module: {
     loaders: [
       {
@@ -38,12 +40,15 @@ export default {
     ],
   },
   plugins: [
+    // resolve.alias does not resolve relative require statements, replace the
+    // buildConfig module via this plugin instead
+    new webpack.NormalModuleReplacementPlugin(/buildConfig\.js$/, path.resolve(__dirname, "src", "build-config-shim.js")),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-      },
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: true,
+    //   },
+    // }),
     // stylelint's postcssPlugin dynamically requires stylelint plugins which
     // are not used in the browser. Tell Webpack to ignore them with the
     // ContextReplacementPlugin. See https://github.com/webpack/webpack/issues/198

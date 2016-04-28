@@ -1,6 +1,6 @@
 {
   "name": "stylelint-browser-bundle",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Bundle stylelint into a browser-friendly module",
   "main": "dist/stylelint-browser-bundle.js",
   "scripts": {
